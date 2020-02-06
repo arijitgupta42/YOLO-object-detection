@@ -15,7 +15,7 @@ labels = open("data/coco.names").read().strip().split("\n")
 colors = np.random.randint(0, 255, size =(len(labels), 3), dtype='uint8')
 
 net = cv2.dnn.readNetFromDarknet(config_path, weights_path)
-path_name = 'images/street.jpg'
+path_name = 'images/crossroad.jpg'
 image = cv2.imread(path_name)
 file_name = os.path.basename(path_name)
 filename, ext = file_name.split(".")
