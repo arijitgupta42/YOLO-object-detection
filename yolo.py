@@ -78,4 +78,11 @@ def yolo_detect(image):
             cv2.putText(image, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX,
                 fontScale=font_scale, color=(0, 0, 0), thickness=thickness)
 
-            return image
+    return image
+
+path_name = "images/street.jpg"
+image = cv2.imread(path_name)
+file_name = os.path.basename(path_name)
+filename, ext = file_name.split(".")
+image = yolo_detect(image)
+cv2.imwrite("results/" + filename +"_yolo3." + ext, image )
